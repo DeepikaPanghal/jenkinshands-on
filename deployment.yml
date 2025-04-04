@@ -17,5 +17,6 @@ spec:
       containers:
       - name: nginx
         image: deepikapan/project2:latest
+        imagePullPolicy: Always  # 🔁 Ensures latest image is always pulled
         ports:
         - containerPort: 80
