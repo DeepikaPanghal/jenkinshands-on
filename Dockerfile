@@ -1,8 +1,10 @@
 # Use the official Ubuntu base image
 FROM ubuntu:latest
 
-# Update package lists and install Apache2
-RUN apt-get update && apt-get install -y apache2
+# Update package lists and install Apache2, curl, and ping
+RUN apt-get update && \
+    apt-get install -y apache2 curl iputils-ping && \
+    apt-get clean
 
 # Copy the current directory's contents into the container
 ADD . /var/www/html/
